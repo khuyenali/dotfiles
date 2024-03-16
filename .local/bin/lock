@@ -1,0 +1,26 @@
+#!/bin/sh
+
+TEXT=#ebdbb2
+BACK=#d65d0e
+RED=#fd4934
+BACKGROUND=#282828
+
+i3lock \
+--insidever-color=$BACKGROUND \
+--ringver-color=#83a598 \
+\
+--insidewrong-color=$BACKGROUND   \
+--ringwrong-color=$RED     \
+\
+--inside-color=$BACKGROUND      \
+--ring-color=#d79921        \
+--line-color=#1d2021        \
+--separator-color=$BACKGROUND   \
+\
+--verif-color=$TEXT          \
+--wrong-color=$TEXT          \
+--layout-color=$TEXT         \
+--keyhl-color=#b8bb26        \
+--bshl-color=$BACK          \
+\
+--blur 5                     
