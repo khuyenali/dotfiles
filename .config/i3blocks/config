@@ -1,0 +1,199 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+# command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=18
+# separator_block_width=30
+markup=pango
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+# [memory]
+# command=$SCRIPT_DIR/memory/memory
+# label=MEM
+# separator=false
+# interval=30
+
+# [memory]
+# label=SWAP
+# instance=swap
+# separator=false
+# interval=30
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+# [disk]
+# label=HOME
+# #DIR=/mnt/data
+# interval=30
+
+# [wifi]
+# # command=$SCRIPT_DIR/wifi/wifi
+# # INTERFACE=wlp2s0
+# label=wifi:
+# interval=10
+# separator=false
+
+# [bandwidth3]
+# command=$SCRIPT_DIR/bandwidth3/bandwidth3
+# interval=persist
+# markup=pango
+# LABEL=<span font='FontAwesome'>  </span>
+# IFACE=[automatically determined]
+# DT=3
+# UNIT=Mb
+# Exposed variables: rx, wx, tx, unit, iface
+# PRINTF_COMMAND=printf "${LABEL}%-5.1f/%5.1f %s/s\n", rx, wx, unit;
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+# [cpu_usage]
+# label=CPU
+# interval=10
+# min_width=CPU 100.00%
+#separator=false
+
+# [load_average]
+# label=LOAD
+# interval=10
+
+
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+# Set to %any to automatically pick (Requires playerctl >=2.1.1)
+#[mediaplayer]
+# This picks any player, with vlc as first, and spotify as last choice
+#instance=vlc,%any,spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#KEY=CAPS
+#markup=pango
+#interval=once
+#signal=11
+
+#[keyindicator]
+#KEY=NUM
+#markup=pango
+#interval=once
+#signal=11
+#
+
+
+
+
+# full_text=〉
+# align=center
+# color=#fabd2f
+separator=false
+# separator_block_width=7
+
+# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+[iface]
+command=$SCRIPT_DIR/iface/iface
+#IFACE=wlan0
+color=#b8bb26
+interval=10
+# separator=false
+
+[temperature]
+command=$SCRIPT_DIR/temperature/temperature
+label=TEMP
+interval=10
+color=#fabd2f
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth/bandwidth
+# INTERFACE=wlp2s0
+# INTERFACE=eth0
+interval=3
+color=#83a598
+
+[volume]
+command=$SCRIPT_DIR/volume/volume
+# label=🎷
+label=VOL
+interval=once
+signal=10
+color=#d3869b
+# background=red
+#STEP=5%
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+command=$SCRIPT_DIR/battery/battery
+label=BAT
+# label=⚡
+# label=<span color='#00c0d6'>BA</span>
+interval=30
+color=#8ec07c
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=10
