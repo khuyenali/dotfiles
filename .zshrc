@@ -61,11 +61,10 @@ alias dp='docker compose'
 alias active='source ./bin/activate'
 alias config="git --git-dir=$HOME/.dotfiles --work-tree ~"
 
-source ~/custom/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/custom/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/custom/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source ~/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-source /home/khuyenali/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export GOPATH=$HOME/projects/go
 export PATH=$PATH:$GOPATH/bin
