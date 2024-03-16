@@ -26,7 +26,17 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH=/usr/local/lib/nodejs/bin:$PATH
-export PATH=/usr/local/go/bin:$PATH
+# export PATH=/usr/local/lib/nodejs/bin:$PATH
+if [ -d "/usr/local/lib/nodejs/bin" ] ; then
+    PATH=/usr/local/lib/nodejs/bin:$PATH
+fi
 
-. "$HOME/.cargo/env"
+# export PATH=/usr/local/go/bin:$PATH
+if [ -d "/usr/local/go/bin" ] ; then
+    PATH=/usr/local/go/bin:$PATH
+fi
+
+# . "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo/env" ] ; then
+    . "$HOME/.cargo/env"
+fi
