@@ -59,7 +59,7 @@ alias vim=nvim
 alias ls='exa --icons'
 alias dp='docker compose'
 alias active='source ./bin/activate'
-alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias config="git --git-dir=$HOME/.dotfiles --work-tree ~"
 
 source ~/custom/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
