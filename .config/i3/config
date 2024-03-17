@@ -105,7 +105,7 @@ bindsym $mod+r mode "resize"
 
 
 exec --no-startup-id ~/.screenlayout/main.sh
-exec --no-startup-id feh --bg-fill ~/custom/wallpaper/wall.jpg
+exec --no-startup-id feh --bg-fill ~/custom/wallpaper/wall.png
 
 bindsym $mod+p exec "lock && systemctl suspend"
 bindsym $mod+Shift+p exec "lock && systemctl hibernate"
