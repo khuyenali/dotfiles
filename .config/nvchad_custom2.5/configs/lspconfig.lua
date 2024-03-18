@@ -8,7 +8,7 @@ local capabilities = configs.capabilities
 --local capabilities = require("nvchad.configs.lspconfig").capabilities
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
@@ -23,21 +23,19 @@ local servers = {
   "rust_analyzer",
   "r_language_server",
 
-  "emmet_language_server",
-
   "bufls",
   "gopls",
 }
 
-for i, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-	on_init = on_init,
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup({
+    on_init = on_init,
     on_attach = on_attach,
     capabilities = capabilities,
-  }
+  })
 end
 
-lspconfig["clangd"].setup {
+lspconfig["clangd"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
@@ -45,4 +43,4 @@ lspconfig["clangd"].setup {
     "clangd",
     "--offset-encoding=utf-16",
   },
-}
+})
