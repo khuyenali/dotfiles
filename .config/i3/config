@@ -30,7 +30,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 # bindsym $mod+KP_Enter exec kitty
 
-bindsym $mod+q kill
+bindsym $mod+shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # change focus
@@ -105,12 +105,21 @@ bindsym $mod+r mode "resize"
 
 
 exec --no-startup-id ~/.screenlayout/main.sh
-exec --no-startup-id feh --bg-fill ~/custom/wallpaper/wall.png
+# exec --no-startup-id feh --bg-fill ~/custom/wallpaper/wall.png
+exec --no-startup-id nitrogen --restore
 
 bindsym $mod+p exec "lock && systemctl suspend"
 bindsym $mod+Shift+p exec "lock && systemctl hibernate"
 bindsym Print exec gnome-screenshot
 bindsym $mod+Print exec gnome-screenshot -i
+
+
+set $yellow #fabd2f
+set $red #fb4934
+set $fg  #ebdbb2
+set $bg0 #282828
+set $bg2 #504945
+set $bg3 #665c54
 
 bar {
     status_command SCRIPT_DIR=~/.config/i3blocks/scripts/ i3blocks
@@ -120,24 +129,24 @@ bar {
 		# tray_padding -20
 
 		colors {
-			background #282828
-			statusline #ebdbb2
-			focused_workspace #282828 #fabd2f #282828
-			active_workspace #665c64 #665c64 #ebdbb2
-			inactive_workspace #282828 #282828 #ebdbb2
-			urgent_workspace #cc241d #cc241d #fdf6e
+			background $bg0
+			statusline $fg
+			focused_workspace	$bg0	$yellow	$bg0
+			active_workspace	$bg3	$bg3	$fg
+			inactive_workspace	$bg0	$bg0	$fg
+			urgent_workspace	$red	$red	$bg0
 		}
 }
 
 default_border pixel 2
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #282828 #282828 #ebdbb2 #cc341d   #d79921
-client.focused_inactive #333333 #5f676a #ffffff #665c54   #665c54
-client.unfocused        #333333 #222222 #888888 #292d2e   #665c54
-client.urgent           #2f343a #cc241d #ffffff #cc241d   #cc241d
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
+client.focused          $bg3	$bg0	$fg	$yellow	$yellow
+client.focused_inactive $bg3	$bg1	$fg	$bg3	$bg3
+client.unfocused        $bg3	$bg1	$fg	$bg3	$bg3
+client.urgent           $bg3	$red	$fg	$red	$red
+client.placeholder      $bg0	$bg0	$fg	$bg0	$bg0
+client.background       $fg
 
 gaps inner 6px
 gaps outer 0px

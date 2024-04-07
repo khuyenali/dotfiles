@@ -187,10 +187,11 @@ color=#d3869b
 [battery]
 command=$SCRIPT_DIR/battery/battery
 label=BAT
-# label=⚡
-# label=<span color='#00c0d6'>BA</span>
 interval=30
 color=#8ec07c
+# bat_number="1"
+# label=⚡"
+# label=<span color='#00c0d6'>BA</span>
 
 # Date Time
 #

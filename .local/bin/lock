@@ -3,24 +3,24 @@
 TEXT=#ebdbb2
 BACK=#d65d0e
 RED=#fd4934
-BACKGROUND=#282828
+BACKGROUND=#3c3836
 
 i3lock \
 --insidever-color=$BACKGROUND \
---ringver-color=#83a598 \
+--ringver-color=#458588 \
 \
 --insidewrong-color=$BACKGROUND   \
 --ringwrong-color=$RED     \
 \
---inside-color=$BACKGROUND      \
---ring-color=#d79921        \
---line-color=#1d2021        \
---separator-color=$BACKGROUND   \
+--inside-color=$BACKGROUND \
+--ring-color=#504945 \
+--line-color=#7c6f64        \
+--separator-color=#98971a   \
 \
 --verif-color=$TEXT          \
 --wrong-color=$TEXT          \
 --layout-color=$TEXT         \
---keyhl-color=#b8bb26        \
+--keyhl-color=#fabd2f        \
 --bshl-color=$BACK          \
 \
 --blur 5                     

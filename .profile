@@ -26,9 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+VERSION=v20.11.1
+DISTRO=linux-x64
 # export PATH=/usr/local/lib/nodejs/bin:$PATH
-if [ -d "/usr/local/lib/nodejs/bin" ] ; then
-    PATH=/usr/local/lib/nodejs/bin:$PATH
+if [ -d "/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin" ] ; then
+    PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 fi
 
 # export PATH=/usr/local/go/bin:$PATH
