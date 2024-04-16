@@ -26,6 +26,8 @@ require('lazy').setup({
 
           LspInfoBorder = { link = 'FloatBorder' },
 
+          QuickFixLine = { fg = colors.bg0, bg = colors.yellow },
+
           -- Statusline = { bg = '#076678' },
           -- MiniStatuslineFilename = { bg = colors.bg2 },
           MiniStatusLineInactive = { fg = '#d79921', bg = colors.bg1 },

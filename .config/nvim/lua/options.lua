@@ -64,3 +64,5 @@ opt.inccommand = 'split'
 opt.cursorline = true
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 opt.hlsearch = true
+
+opt.laststatus = 3

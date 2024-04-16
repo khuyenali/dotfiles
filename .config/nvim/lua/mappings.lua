@@ -9,6 +9,9 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>k', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+vim.keymap.set('n', '<C-n>', ':cn<CR>zz', { desc = '[N]ext item in quick fix list' })
+vim.keymap.set('n', '<C-p>', ':cp<CR>zz', { desc = '[P]revious item in quick fix list' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -43,16 +46,16 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize -5 <CR>', { desc = 'resize to
 vim.keymap.set('n', '<C-Up>', ':resize +5 <CR>', { desc = 'resize to up' })
 vim.keymap.set('n', '<C-Down>', ':resize -5 <CR>', { desc = 'resize to down' })
 
-vim.keymap.set('n', '<leader>n', '<cmd> set nu! rnu! <CR>', { desc = 'toggle line number' })
+vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
+
+vim.keymap.set('n', '<leader>l', '<cmd> set nu! rnu! <CR>', { desc = 'toggle line number' })
 -- vim.keymap.set('n', '<expr>k', 'v:count > 5 ? "m\'" . v:count : "") . "k"', { desc = 'escape jump' })
 -- vim.keymap.set('n', '<expr>j', 'v:count > 5 ? "m\'" . v:count : "") . "j"', { desc = 'escape jump' })
 
 vim.keymap.set('n', '<leader>i', function()
   require('conform').format { lsp_fallback = true }
 end, { desc = 'LSP formatting' })
-
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
