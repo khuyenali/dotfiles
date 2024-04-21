@@ -4,7 +4,14 @@ Xft.autohint: 0
 Xft.hinting: 1
 Xft.rgba: rgb
 
-Xcursor.size: 32
-! Xft.dpi: 110
-! Xft.dpi: 170
-! Xft.dpi: 200
+Xcursor.size: 24
+
+! Xft.dpi: 96
+! Xft.dpi: 120
+! Xft.dpi: 144
+! Xft.dpi: 168
+! Xft.dpi: 192
+
+! Xcursor.size: 24
+! Xcursor.size: 32
+! Xcursor.size: 64

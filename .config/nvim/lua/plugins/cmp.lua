@@ -1,5 +1,3 @@
-local colors = require 'colors'
-
 return {
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -46,20 +44,6 @@ return {
       'hrsh7th/cmp-path',
     },
     config = function()
-      -- See `:help cmp`
-      --
-      local function border(hl_name)
-        return {
-          { '╭', hl_name },
-          { '─', hl_name },
-          { '╮', hl_name },
-          { '│', hl_name },
-          { '╯', hl_name },
-          { '─', hl_name },
-          { '╰', hl_name },
-          { '│', hl_name },
-        }
-      end
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
