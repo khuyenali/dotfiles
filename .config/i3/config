@@ -23,6 +23,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -67,7 +69,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -141,9 +143,9 @@ bar {
 default_border pixel 2
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $bg3	$bg0	$fg	$yellow	$yellow
-client.focused_inactive $bg3	$bg1	$fg	$bg3	$bg3
-client.unfocused        $bg3	$bg1	$fg	$bg3	$bg3
+client.focused          $bg3	$yellow	$bg0	$yellow	$yellow
+client.focused_inactive $bg3	$bg0	$fg	$bg3	$bg3
+client.unfocused        $bg3	$bg0	$fg	$bg3	$bg3
 client.urgent           $bg3	$red	$fg	$red	$red
 client.placeholder      $bg0	$bg0	$fg	$bg0	$bg0
 client.background       $fg
