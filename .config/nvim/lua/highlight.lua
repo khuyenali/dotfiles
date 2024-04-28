@@ -1,6 +1,7 @@
 local colors = require 'colors'
 
 return {
+  -- Normal = { bg = colors.bg0_h },
   SignColumn = { bg = colors.bg0 },
 
   NormalFloat = { fg = colors.fg, bg = colors.bg0 },
@@ -17,7 +18,7 @@ return {
   -- Statusline = { bg = '#076678' },
   -- MiniStatuslineFilename = { bg = colors.bg2 },
   -- MiniStatusLineInactive = { fg = '#d79921', bg = colors.bg0 },
-  MiniStatusLineInactive = { fg = colors.yellow, bg = colors.bg2 },
+  MiniStatusLineInactive = { fg = colors.fg3, bg = colors.bg2 },
 
   -- MiniStatuslineFilename = { bg = colors.bg4 },
   -- MiniStatusLineInactive = { bg = colors.bg4},
