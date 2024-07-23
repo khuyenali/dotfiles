@@ -6,6 +6,7 @@ return {
   aqua = '#8ec07c',
   orange = '#d65d0e',
   gray = '#928374',
+  green = '#b8bb26',
 
   bg0 = '#282828',
   bg0_s = '#32302f',
