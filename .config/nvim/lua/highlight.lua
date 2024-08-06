@@ -1,7 +1,7 @@
 local colors = require 'colors'
 
 return {
-  -- Normal = { bg = colors.bg0_h },
+  Normal = { bg = colors.bg0_h },
   SignColumn = { bg = colors.bg0 },
 
   NormalFloat = { fg = colors.fg, bg = colors.bg0 },
