@@ -25,9 +25,9 @@ return {
         },
       }
 
-      require('conform').formatters.black = {
-        prepend_args = { '--line-length', '120' },
-      }
+      -- require('conform').formatters.black = {
+      --   prepend_args = { '--line-length', '120' },
+      -- }
     end,
   },
 }

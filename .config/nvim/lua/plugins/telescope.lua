@@ -61,6 +61,7 @@ return {
           buffers = {
             theme = 'dropdown',
             previewer = false,
+            -- initial_mode = 'normal',
             mappings = {
               i = {
                 ['<C-d>'] = actions.delete_buffer,

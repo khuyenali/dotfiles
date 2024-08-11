@@ -54,6 +54,10 @@ vim.keymap.set('n', '<leader>l', '<cmd> set nu! rnu! <CR>', { desc = 'toggle lin
 -- vim.keymap.set('n', '<expr>j', 'v:count > 5 ? "m\'" . v:count : "") . "j"', { desc = 'escape jump' })
 
 vim.keymap.set('v', 'p', '"_dP')
+vim.keymap.set('x', '<', '<gv', { desc = 'keep previous visual selection' })
+vim.keymap.set('x', '>', '>gv', { desc = 'keep previous visual selection' })
+
+vim.keymap.set('x', 'p', 'P')
 
 vim.keymap.set('n', '<leader>i', function()
   require('conform').format { lsp_fallback = true }

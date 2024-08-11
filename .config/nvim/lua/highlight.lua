@@ -1,13 +1,14 @@
 local colors = require 'colors'
 
 return {
-  -- Normal = { bg = colors.bg0_h },
+  Normal = { bg = colors.bg0_h },
   SignColumn = { bg = colors.bg0 },
 
   NormalFloat = { fg = colors.fg, bg = colors.bg0 },
   FloatBorder = { fg = colors.bg3, bg = colors.bg0 },
 
   LspInfoBorder = { link = 'FloatBorder' },
+  String = { fg = colors.green, italic = false },
 
   QuickFixLine = { fg = colors.bg0, bg = colors.yellow },
 
