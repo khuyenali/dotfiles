@@ -61,7 +61,6 @@ return {
           buffers = {
             theme = 'dropdown',
             previewer = false,
-            initial_mode = 'normal',
             mappings = {
               i = {
                 ['<C-d>'] = actions.delete_buffer,
@@ -84,6 +83,7 @@ return {
           lsp_references = {
             theme = 'dropdown',
             initial_mode = 'normal',
+            path_display = { 'smart' },
           },
 
           lsp_definitions = {

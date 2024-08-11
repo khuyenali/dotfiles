@@ -118,8 +118,9 @@ exec --no-startup-id ~/.screenlayout/main.sh
 # exec --no-startup-id feh --bg-fill ~/custom/wallpaper/wall.png
 exec --no-startup-id nitrogen --restore
 
-bindsym $mod+p exec "lock && systemctl suspend"
-bindsym $mod+Shift+p exec "lock && systemctl hibernate"
+bindsym Mod4+0 exec "lock && sleep 1 && systemctl suspend"
+bindsym Mod4+Shift+0 exec "lock && systemctl hibernate"
+bindsym Mod4+p exec "lock"
 bindsym Print exec gnome-screenshot
 bindsym $mod+Print exec gnome-screenshot -i
 
@@ -132,7 +133,8 @@ set $bg2 #504945
 set $bg3 #665c54
 
 bar {
-    status_command SCRIPT_DIR=~/.config/i3blocks/scripts/ i3blocks
+	font pango:SF Pro Bold 8
+	status_command SCRIPT_DIR=~/.config/i3blocks/scripts/ i3blocks
 		height 22
 		# height 45
 		tray_output primary

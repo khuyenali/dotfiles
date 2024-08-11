@@ -30,13 +30,13 @@ markup=pango
 separator=false
 # separator_block_width=7
 
-# [keyindicator]
-# command=$SCRIPT_DIR/keyindicator/keyindicator
+[keyindicator]
+command=$SCRIPT_DIR/keyindicator/keyindicator
 # KEY=CAPS
-# # markup=pango
-# interval=once
-# signal=11
-# #Allowed keys are CAPS and NUM
+# markup=pango
+interval=once
+signal=11
+#Allowed keys are CAPS and NUM
 
 [mediaplayer]
 # This picks any player, with vlc as first, and spotify as last choice
@@ -94,5 +94,5 @@ color=#8ec07c
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M'
+command=date '+%a  %Y-%m-%d %H:%M'
 interval=10

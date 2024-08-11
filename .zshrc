@@ -56,10 +56,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias vi=/usr/bin/vim
 alias vim=nvim
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias dp='docker compose'
 alias active='source ./bin/activate'
 alias config="git --git-dir=$HOME/.dotfiles --work-tree ~"
+alias pos="poetry shell"
 
 [[ ! -f ~/custom/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/custom/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] || source ~/custom/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -74,3 +75,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 eval "$(zoxide init --cmd cd zsh)"
+
+# export TZ=Asian/Taipei
+
+
