@@ -66,3 +66,5 @@ opt.cursorline = true
 opt.hlsearch = true
 
 -- opt.laststatus = 3
+
+opt.pumheight = 20

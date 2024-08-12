@@ -14,19 +14,10 @@ return {
       { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
-      require('lspconfig.ui.windows').default_options.border = 'rounded'
+      -- require('lspconfig.ui.windows').default_options.border = 'rounded'
 
       vim.diagnostic.config {
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '', --✘
-            [vim.diagnostic.severity.WARN] = '',
-            [vim.diagnostic.severity.INFO] = '', --◉
-            [vim.diagnostic.severity.HINT] = '󰌶',
-          },
-        },
         virtual_text = false,
-        underline = true,
         float = {
           style = 'minimal',
           border = 'rounded',
@@ -68,7 +59,9 @@ return {
           -- word under your cursor when your cursor rests there for a little while.
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 
-          client.server_capabilities.semanticTokensProvider = nil
+          if client ~= nil then
+            client.server_capabilities.semanticTokensProvider = nil
+          end
 
           if client and client.server_capabilities.documentHighlightProvider then
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {

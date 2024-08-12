@@ -12,6 +12,15 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  require 'plugins.indent_line',
+  require 'plugins.telescope',
+  require 'plugins.lspconfig',
+  require 'plugins.cmp',
+  require 'plugins.mini',
+  require 'plugins.treesitter',
+  require 'plugins.conform',
+  require 'plugins.nvim_tree',
+
   {
     'ellisonleao/gruvbox.nvim',
     lazy = false,
@@ -44,8 +53,8 @@ require('lazy').setup({
         hide_number = true,
         start_in_insert = true,
         direction = 'float',
-        -- shade_terminals = false,
-        shade_terminals = true,
+        shade_terminals = false,
+        -- shade_terminals = true,
         shading_factor = 0, --
         highlights = {
           -- Normal = {
@@ -60,7 +69,7 @@ require('lazy').setup({
         },
         float_opts = {
           border = 'rounded',
-          background = 'light',
+          -- background = 'dark',
         },
       }
     end,
@@ -168,28 +177,28 @@ require('lazy').setup({
 
   {
     'folke/which-key.nvim',
-    event = 'VimEnter',
-    config = function()
-      require('which-key').setup {}
-
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      }
-    end,
+    event = 'VeryLazy',
+    -- keys = {
+    --   {
+    --     {'<leader>c',  name = '[C]ode', _ = 'which_key_ignore' },
+    --     {'<ljader>d',  name = '[D]ocument', _ = 'which_key_ignore' },
+    --     {'<leader>r',  name = '[R]ename', _ = 'which_key_ignore' },
+    --     {'<leader>s',  name = '[S]earch', _ = 'which_key_ignore' },
+    --     {'<leader>w',  name = '[W]orkspace', _ = 'which_key_ignore' },
+    --   },
+    -- },
+    -- config = function()
+    --   require('which-key').setup {}
+    --
+    --   require('which-key').register {
+    --     ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+    --     ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+    --     ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
+    --     ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+    --     ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+    --   }
+    -- end,
   },
-
-  require 'plugins.indent_line',
-  require 'plugins.telescope',
-  require 'plugins.lspconfig',
-  require 'plugins.cmp',
-  require 'plugins.mini',
-  require 'plugins.treesitter',
-  require 'plugins.conform',
-  require 'plugins.nvim_tree',
 }, {
   ui = {
     border = 'rounded',

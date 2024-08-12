@@ -4,15 +4,15 @@ return {
   Normal = { bg = colors.bg0_h },
   SignColumn = { bg = colors.bg0 },
 
-  NormalFloat = { fg = colors.fg, bg = colors.bg0 },
-  FloatBorder = { fg = colors.bg3, bg = colors.bg0 },
+  NormalFloat = { fg = colors.fg, bg = colors.bg0_h },
+  FloatBorder = { fg = colors.bg3, bg = colors.bg0_h },
 
   LspInfoBorder = { link = 'FloatBorder' },
   String = { fg = colors.green, italic = false },
 
   QuickFixLine = { fg = colors.bg0, bg = colors.yellow },
 
-  NormalNC = { bg = colors.bg0_s },
+  NormalNC = { bg = colors.bg0 },
 
   NvimTreeWindowPicker = { link = 'Statusline' },
 
