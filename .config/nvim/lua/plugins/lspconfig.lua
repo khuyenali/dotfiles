@@ -106,6 +106,18 @@ return {
             },
           },
         },
+
+        tsserver = {
+          init_options = {
+            preferences = {
+              disableSuggestions = true,
+            },
+          },
+        },
+
+        clangd = {
+          cmd = { 'clangd', '--fallback-style=llvm', '--offset-encoding=utf-16' },
+        },
       }
 
       require('mason').setup {

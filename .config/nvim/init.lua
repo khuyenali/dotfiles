@@ -22,6 +22,10 @@ require('lazy').setup({
   require 'plugins.nvim_tree',
 
   {
+    'github/copilot.vim',
+  },
+
+  {
     'ellisonleao/gruvbox.nvim',
     lazy = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
