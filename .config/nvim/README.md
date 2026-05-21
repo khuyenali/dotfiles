@@ -29,5 +29,5 @@ Start Neovim
 nvim
 ```
 
-That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
-current plugin status.
+That's it! `vim.pack` will install the configured plugins and write
+`nvim-pack-lock.json`. Use `:lua vim.pack.update()` to review plugin updates.
