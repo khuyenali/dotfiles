@@ -62,24 +62,20 @@ vim.pack.add({
   { src = gh 'j-hui/fidget.nvim' },
   { src = gh 'folke/lazydev.nvim' },
 
-  { src = gh 'hrsh7th/nvim-cmp' },
+  { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' },
   { src = gh 'L3MON4D3/LuaSnip' },
   { src = gh 'rafamadriz/friendly-snippets' },
   { src = gh 'windwp/nvim-autopairs' },
-  { src = gh 'saadparwaiz1/cmp_luasnip' },
-  { src = gh 'hrsh7th/cmp-nvim-lsp' },
-  { src = gh 'hrsh7th/cmp-path' },
 
-  { src = gh 'echasnovski/mini.nvim' },
+  { src = gh 'nvim-mini/mini.nvim' },
   { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' },
   { src = gh 'stevearc/conform.nvim' },
   { src = gh 'nvim-tree/nvim-tree.lua' },
 
   { src = gh 'github/copilot.vim' },
   { src = gh 'ellisonleao/gruvbox.nvim' },
-  { src = gh 'tpope/vim-sleuth' },
+  { src = gh 'NMAC427/guess-indent.nvim' },
   { src = gh 'folke/todo-comments.nvim' },
-  { src = gh 'numToStr/Comment.nvim' },
   { src = gh 'akinsho/toggleterm.nvim' },
   { src = gh 'ThePrimeagen/harpoon', version = 'harpoon2' },
   { src = gh 'catgoose/nvim-colorizer.lua' },
@@ -101,8 +97,8 @@ require('plugins.treesitter').setup()
 require('plugins.conform').setup()
 require('plugins.nvim_tree').setup()
 
+require('guess-indent').setup {}
 require('todo-comments').setup { signs = false }
-require('Comment').setup {}
 require('colorizer').setup()
 require('gitsigns').setup {
   signs = {

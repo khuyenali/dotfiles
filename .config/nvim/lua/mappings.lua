@@ -54,14 +54,23 @@ vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree T
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
 
 vim.keymap.set('n', '<leader>l', '<cmd> set nu! rnu! <CR>', { desc = 'toggle line number' })
--- vim.keymap.set('n', '<expr>k', 'v:count > 5 ? "m\'" . v:count : "") . "k"', { desc = 'escape jump' })
--- vim.keymap.set('n', '<expr>j', 'v:count > 5 ? "m\'" . v:count : "") . "j"', { desc = 'escape jump' })
+vim.keymap.set('n', '<expr>k', 'v:count > 5 ? "m\'" . v:count : "") . "k"', { desc = 'escape jump' })
+vim.keymap.set('n', '<expr>j', 'v:count > 5 ? "m\'" . v:count : "") . "j"', { desc = 'escape jump' })
+
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = '[J] move line while secelct' })
+vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv", { desc = '[J] move line while secelct' })
+
 
 vim.keymap.set('v', 'p', '"_dP')
 vim.keymap.set('x', '<', '<gv', { desc = 'keep previous visual selection' })
 vim.keymap.set('x', '>', '>gv', { desc = 'keep previous visual selection' })
 
 vim.keymap.set('x', 'p', 'P')
+
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>Y', '"+y$')
+
 
 vim.keymap.set('n', '<leader>i', function()
   require('conform').format { lsp_format = 'fallback' }
@@ -102,14 +111,14 @@ vim.g.copilot_no_tab_map = true
 --
 --
 
-vim.g.clipboard = {
-  name = 'OSC 52',
-  copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy '+',
-    ['*'] = require('vim.ui.clipboard.osc52').copy '*',
-  },
-  paste = {
-    ['+'] = require('vim.ui.clipboard.osc52').paste '+',
-    ['*'] = require('vim.ui.clipboard.osc52').paste '*',
-  },
-}
+-- vim.g.clipboard = {
+--   name = 'OSC 52',
+--   copy = {
+--     ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+--     ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+--   },
+--   paste = {
+--     ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+--     ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+--   },
+-- }

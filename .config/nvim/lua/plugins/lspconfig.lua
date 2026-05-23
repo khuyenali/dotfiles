@@ -74,8 +74,7 @@ function M.setup()
     end,
   })
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+  local capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   local servers = {
     lua_ls = {
@@ -117,12 +116,16 @@ function M.setup()
     },
   }
 
-  local server_names = vim.tbl_keys(servers)
-  table.sort(server_names)
+  vim.lsp.config('*', {
+    capabilities = capabilities,
+  })
+
+  for name, server in pairs(servers) do
+    vim.lsp.config(name, server)
+  end
 
   require('mason-lspconfig').setup {
-    ensure_installed = server_names,
-    automatic_enable = false,
+    automatic_enable = true,
   }
 
   require('mason-tool-installer').setup {
@@ -132,13 +135,6 @@ function M.setup()
       'tree-sitter-cli',
     },
   }
-
-  for name, server in pairs(servers) do
-    server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-    vim.lsp.config(name, server)
-  end
-
-  vim.lsp.enable(server_names)
 end
 
 return M

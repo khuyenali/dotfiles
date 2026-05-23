@@ -7,6 +7,23 @@ return {
   NormalFloat = { fg = colors.fg, bg = colors.bg0_h },
   FloatBorder = { fg = colors.bg3, bg = colors.bg0_h },
 
+  BlinkCmpMenu = { fg = colors.fg, bg = colors.bg0_h },
+  BlinkCmpMenuBorder = { fg = colors.bg3, bg = colors.bg0_h },
+  BlinkCmpMenuSelection = { bg = colors.bg2 },
+  BlinkCmpDoc = { fg = colors.fg, bg = colors.bg0_h },
+  BlinkCmpDocBorder = { fg = colors.bg3, bg = colors.bg0_h },
+  BlinkCmpDocSeparator = { fg = colors.bg3, bg = colors.bg0_h },
+  BlinkCmpSignatureHelp = { fg = colors.fg, bg = colors.bg0_h },
+  BlinkCmpSignatureHelpBorder = { fg = colors.bg3, bg = colors.bg0_h },
+  BlinkCmpLabel = { fg = colors.fg },
+  BlinkCmpLabelDeprecated = { fg = colors.gray, strikethrough = true },
+  BlinkCmpLabelMatch = { fg = colors.yellow },
+  BlinkCmpLabelDetail = { fg = colors.fg3 },
+  BlinkCmpLabelDescription = { fg = colors.fg3 },
+  BlinkCmpKind = { fg = colors.blue },
+  BlinkCmpSource = { fg = colors.fg3 },
+  BlinkCmpGhostText = { fg = colors.gray },
+
   LspInfoBorder = { link = 'FloatBorder' },
   String = { fg = colors.green, italic = false },
 
